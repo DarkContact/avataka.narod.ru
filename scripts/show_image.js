@@ -1,7 +1,7 @@
 var showBtns = document.querySelectorAll('.picture-block');
 var image_wrap = document.querySelector('.image-wrap');
 var image_block = image_wrap.querySelector('.image-block');
-
+var win_Height = window.innerHeight;
 //  Set size image in full screen mode
 var setSize = function( winHeight ) {
     let heightImage = winHeight * 0.9;
@@ -13,9 +13,8 @@ var setSize = function( winHeight ) {
 var closeImage = function(class_name) {
     image_wrap.classList.remove('image-wrap-show');
     image_block.classList.remove( class_name );
+    setSize( 0 );
 };
-
-setSize( window.innerHeight );
 
 for (let i=0; i<showBtns.length; i++) {
     var showBtn = showBtns[i];
@@ -34,6 +33,18 @@ for (let i=0; i<showBtns.length; i++) {
                 closeImage(img_class);
             }
         });
-    });
-}
 
+        var start = Date.now();
+
+        var timer = setInterval( function() {
+            var timePassed = Date.now() - start;
+
+            //image_block.style.left = timePassed / 5 + 'px';
+            var timeHeight = win_Height * timePassed / 200;
+            setSize( timeHeight );
+
+            if (timePassed >= 200) clearInterval(timer);
+        }, 10);
+
+    });
+}      
