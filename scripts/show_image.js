@@ -1,7 +1,6 @@
 var showBtns = document.querySelectorAll('.picture-block');
 var image_wrap = document.querySelector('.image-wrap');
 var image_block = image_wrap.querySelector('.image-block');
-var closeBtn = image_wrap.querySelector('.button-close');
 
 //  Set size image in full screen mode
 var setSize = function( winHeight ) {
@@ -26,7 +25,7 @@ for (let i=0; i<showBtns.length; i++) {
         var img_class = ev.target.getAttribute('img-class');
         image_block.classList.add( img_class );
 
-        closeBtn.addEventListener('click', function() {
+        image_wrap.addEventListener('click', function() {
             closeImage(img_class);
         });
         

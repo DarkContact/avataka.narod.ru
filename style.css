@@ -231,17 +231,3 @@ a.download-button:active {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
-.button-close {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: 0;
-  right: -42px;
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.button-close:hover {
-  opacity: 1;
-}
