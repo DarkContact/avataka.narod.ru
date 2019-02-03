@@ -39,12 +39,11 @@ for (let i=0; i<showBtns.length; i++) {
         var timer = setInterval( function() {
             var timePassed = Date.now() - start;
 
-            //image_block.style.left = timePassed / 5 + 'px';
             var timeHeight = win_Height * timePassed / 200;
             setSize( timeHeight );
 
             if (timePassed >= 200) clearInterval(timer);
-        }, 10);
+        }, 4);
 
     });
 }      
